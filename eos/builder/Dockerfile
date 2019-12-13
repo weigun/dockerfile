@@ -16,7 +16,7 @@ RUN echo "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main" >> /etc/ap
      clang-4.0 lldb-4.0 lld-4.0 llvm-4.0-dev libclang-4.0-dev ninja-build \
      ccache doxygen graphviz libgmp3-dev ruby libusb-1.0-0-dev libcurl4-gnutls-dev clang \
   && apt-get autoremove -y \
-  && apt -get autoclean -y \
+  && apt-get autoclean -y \
   && rm -rf /var/lib/apt/lists/* 
 
 RUN update-alternatives --install /usr/bin/clang clang /usr/lib/llvm-4.0/bin/clang 400 \
