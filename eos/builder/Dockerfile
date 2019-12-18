@@ -43,7 +43,9 @@ RUN git clone --depth 1 --single-branch --branch release_40 https://github.com/l
     make -j$(nproc) && \
     make install && \
     cd / && \
-    rm -rf /llvm
+    rm -rf /llvm && \
+    ln -s /usr/lib/llvm-4.0/lib/LLVMgold.so /root/install/lib/LLVMgold.so
+    
 # build boost
 RUN curl -LO https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 && \
     tar -xjf boost_1_70_0.tar.bz2 && \
