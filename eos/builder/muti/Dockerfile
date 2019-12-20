@@ -1,22 +1,22 @@
-FROM weigun/clang8 AS clang8
+FROM weigun/bitbuilder:clang8 AS clang8
 
 RUN echo $PATH
 
 
 # Second stage: minimal runtime environment
-FROM weigun/llvm AS llvm
+FROM weigun/bitbuilder:llvm AS llvm
 
 RUN echo $PATH
 
-FROM weigun/boost AS boost
+FROM weigun/bitbuilder:boost AS boost
 
 RUN echo $PATH
 
-FROM weigun/driver AS driver
+FROM weigun/bitbuilder:driver AS driver
 
 RUN echo $PATH
 
-FROM weigun/baseEnv as result
+FROM weigun/bitbuilder:baseEnv as result
 COPY --from=clang8 ${TOOLS}/clang ${TOOLS}/clang
 COPY --from=llvm ${TOOLS}/llvm4 ${TOOLS}/llvm4
 COPY --from=boost ${TOOLS}/boost ${TOOLS}/boost

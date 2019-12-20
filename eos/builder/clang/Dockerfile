@@ -1,4 +1,4 @@
-FROM weigun/baseEnv:last
+FROM weigun/bitbuilder:baseEnv
 
 WORKDIR ${TOOLS}
 

@@ -1,4 +1,4 @@
-FROM weigun/clang8:last
+FROM weigun/bitbuilder:clang8
 
 WORKDIR ${TOOLS}
 
