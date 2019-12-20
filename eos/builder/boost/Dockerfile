@@ -1,4 +1,4 @@
-FROM weigun/bitbuilder:baseEnv
+FROM weigun/bitbuilder:clang8
 
 WORKDIR ${TOOLS}
     
