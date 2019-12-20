@@ -30,7 +30,7 @@ RUN curl -L https://github.com/mongodb/mongo-cxx-driver/archive/r3.4.0.tar.gz -o
     mkdir -p build && \
     cd build && \
     mkdir -p ${TOOLS}/mongo-cxxdriver && \
-    cmake -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${TOOLS}/mongo-cxxdriver" .. && \
+    cmake -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${TOOLS}/mongo-cxxdriver" -DCMAKE_PREFIX_PATH="${TOOLS}/mongo-cdriver".. && \
     make -j$(nproc) && \
     make install && \
     export PATH=${TOOLS}/mongo-cxxdriver:$PATH && \
